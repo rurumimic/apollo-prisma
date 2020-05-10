@@ -6,5 +6,7 @@ export const User = objectType({
     t.model.id()
     t.model.email()
     t.model.name()
+    t.model.posts()
+    t.model.profile()
   },
 })
