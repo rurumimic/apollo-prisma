@@ -1,17 +1,7 @@
-import { ApolloServer, gql } from 'apollo-server-koa'
+import { ApolloServer } from 'apollo-server-koa'
+import schema from './schema'
+import { createContext } from './context'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-  },
-}
-
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({ schema, context: createContext })
 
 export default server
