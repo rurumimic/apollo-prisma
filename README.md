@@ -9,9 +9,14 @@
 
 ---
 
-## Journal
+## Documentation
 
 ### Server
+
+1. [Setup](server/docs/01.setup.md): Init project.
+2. [Server](server/docs/02.server.md): Koa, Apollo, Prisma, Nexus Schema, GraphQL.
+3. [Publish](server/docs/03.publish.md): Apollo Graph Manager.
+4. [Build](server/docs/04.build.md): Run Server. Test GraphQL.
 
 ### Client
 

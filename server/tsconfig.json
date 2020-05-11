@@ -6,7 +6,8 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
+    "skipLibCheck": true, // Skip Gulp Build Error
+    "target": "es5"
   },
   "include": ["src"]
 }

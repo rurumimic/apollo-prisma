@@ -1,20 +1,22 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "gulp",
-    "local": "yarn generate && ts-node src/main.ts",
+    "build": "yarn generate && gulp",
+    "start": "NODE_ENV=production node dist/main.js",
+    "local": "yarn generate && ts-node -r dotenv/config src/main.ts",
     "seed": "ts-node prisma/seed.ts",
     "prisma:save": "prisma migrate save --experimental",
     "prisma:up": "prisma migrate up --experimental",
     "generate": "yarn generate:prisma && yarn generate:nexus",
     "generate:prisma": "prisma generate",
-    "generate:nexus": "NODE_ENV=development ts-node --transpile-only src/graphql/schema",
+    "generate:nexus": "ts-node -r dotenv/config --transpile-only src/graphql/schema",
     "database:up": "docker-compose -f docker/database.yml up -d",
     "database:stop": "docker-compose -f docker/database.yml stop",
-    "database:down": "docker-compose -f docker/database.yml down"
+    "database:down": "docker-compose -f docker/database.yml down",
+    "apollo:push": "npx apollo service:push --endpoint=http://localhost:8081/graphql",
+    "apollo:check": "npx apollo service:check --endpoint=http://localhost:8081/graphql"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
@@ -38,6 +40,7 @@
     "@types/node": "^13.13.4",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard-with-typescript": "^16.0.0",
