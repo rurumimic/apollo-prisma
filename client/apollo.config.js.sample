@@ -1,0 +1,6 @@
+module.exports = {
+  client: {
+    name: 'Apollo & Prisma',
+    service: 'your-service-name',
+  },
+}

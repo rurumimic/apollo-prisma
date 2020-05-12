@@ -20,6 +20,10 @@
 
 ### Client
 
+1. [Setup](client/docs/01.setup.md): Init React App & Apollo Client
+2. [Query](client/docs/02.query.md): Fetch a small data.
+3. Mutation, Local State, Cache... 여기서부터는 [Apollo Client: React](https://www.apollographql.com/docs/react/) 문서를 읽으면 된다.
+
 ---
 
 ## Articles
